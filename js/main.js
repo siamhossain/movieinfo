@@ -6,10 +6,10 @@ $(document).ready(() => {
     });
 });
 
-const proxy = "https://cors-anywhere.herokuapp.com/";
+const proxy = `https://cors-anywhere.herokuapp.com/`;
 
 function getMovies(searchText){
-    axios.get('${proxy}http://www.omdbapi.com/?s='+searchText + '&apikey=9be27fce')
+    axios.get(`${proxy}http://www.omdbapi.com/?s=`+searchText + `&apikey=9be27fce`)
         .then((response) => {
             console.log(response);
             let movies = response.data.Search;
@@ -42,7 +42,7 @@ function movieSelected(id){
 function getMovie(){
     let movieId = sessionStorage.getItem('movieId');
 
-    axios.get('${proxy}http://www.omdbapi.com/?i='+movieId + '&apikey=9be27fce')
+    axios.get(`${proxy}http://www.omdbapi.com/?i=`+movieId + `&apikey=9be27fce`)
         .then((response) => {
             console.log(response);
             let movie = response.data;
